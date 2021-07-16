@@ -16,7 +16,7 @@ interface IDayProps {
 }
 
 class Day extends PureComponent<IDayProps>{
-    public render() {
+    public render(): React.ReactNode {
         return (
             <div className="days {this.props.now?'now':null}" id={this.props.id}>
                 <div className="main">
@@ -27,7 +27,9 @@ class Day extends PureComponent<IDayProps>{
                     </div>
                 </div>
                 <div className="moreInfo">
-                    <div className="info" hidden="" style="display: none;">
+                    <div className="info"
+                         // hidden="" style="display: none;"
+                    >
                         <span className="morn_temp">Утро: {this.props.morning}</span><br />
                         <span className="day_temp">День: {this.props.day}</span><br />
                         <span className="ev_temp">Вечер: {this.props.evening}</span><br />

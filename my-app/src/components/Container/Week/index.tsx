@@ -5,9 +5,11 @@ import Day from "./Day";
 
 
 class Week extends PureComponent{
-    public render (){
+    public render (): React.ReactNode{
         return (
-            <div className="week"></div>
+            <div className="week">
+
+            </div>
         )
     }
 }

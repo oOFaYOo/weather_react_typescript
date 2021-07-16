@@ -1,16 +1,24 @@
-import React from "react";
+import React, {FormEvent} from "react";
 import "./style.css";
 import {Component, PureComponent} from "react";
 
 
-class Search extends Component {
+interface ISearchProps {
+    handleSearch:(city:string|null) => {}
+}
 
-    public render(){
+class Search extends Component<ISearchProps>{
+
+    public render(): React.ReactNode{
         return (
             <div id="search">
-                <form>
+                <form onSubmit={(e:FormEvent<HTMLFormElement>)=>{
+                    this.props.handleSearch((e.currentTarget.elements.namedItem("city") as HTMLInputElement).value);
+                    (e.currentTarget.elements.namedItem("city") as HTMLInputElement).value = "";
+                    e.preventDefault();
+                }}>
                     <label>Город:
-                        <input id="set_city" placeholder="Название города" />
+                        <input name="city" id="set_city" placeholder="Название города" />
                             <button id="getWeather">
                                 <img src="glass.png" alt="" />Найти
                             </button>
@@ -19,6 +27,7 @@ class Search extends Component {
             </div>
         )
     }
+
 
 }
 
