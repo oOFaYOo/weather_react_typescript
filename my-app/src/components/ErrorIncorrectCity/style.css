@@ -1,0 +1,12 @@
+#error{
+    width: 500px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    top: 10%;
+    position: absolute;
+    border-radius: 10px;
+    border-left: #d41646 5px solid;
+    border-right: #d41646 5px solid;
+    font-family: monospace;
+    text-align: center;
+}

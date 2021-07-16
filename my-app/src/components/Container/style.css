@@ -1,0 +1,12 @@
+.container{
+    position: relative;
+    background: linear-gradient(to left, rgba(231, 206, 77, 0.8) 2%, rgba(101, 101, 101, 0.8) 2% );
+    height: 55%;
+    min-height: 335px;
+    width: 60%;
+    min-width: 550px;
+    border-radius: 10px 0 0 10px;
+    max-height: 420px;
+    max-width: 1130px;
+    box-shadow: #000000 0 0 500px 1px;
+}

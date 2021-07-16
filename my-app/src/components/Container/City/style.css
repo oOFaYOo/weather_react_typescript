@@ -1,0 +1,11 @@
+#get_city{
+    position: relative;
+    font-size: 20pt;
+    width: 90%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+    color: rgba(232, 232, 232, 0.78);
+    font-family: Impact, sans-serif;
+}

@@ -1,0 +1,14 @@
+.week{
+    position: relative;
+    width: 95%;
+    height: 65%;
+    border-radius: 0 0 0 10px;
+    display: flex;
+    margin: 0;
+    justify-content: space-around;
+    align-items: center;
+    align-content: stretch;
+    flex-direction: row;
+    padding-right: 3%;
+    padding-left: 2%;
+}
