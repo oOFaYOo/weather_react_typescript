@@ -22,11 +22,11 @@ class App extends PureComponent<IAppProps, IAppState>{
         nameOfCity: null
     }
 
-    async componentWillMount() {
-        if(this.state.error){
-            setTimeout(()=>{this.setState({error:false})}, 3000);
-        }
-    }
+    // shouldComponentUpdate() {
+    //     if(this.state.error){
+    //         setTimeout(()=>{this.setState({error:false})}, 3000);
+    //     }
+    // }
 
     public render(): React.ReactNode {
         return (
@@ -47,6 +47,7 @@ class App extends PureComponent<IAppProps, IAppState>{
                 }
             )
         } else if (!weather) {
+            setTimeout(()=>{this.setState({error:false})}, 3000);
             this.setState(
                 {
                     error: true
