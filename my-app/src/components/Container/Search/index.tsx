@@ -4,7 +4,7 @@ import {Component, PureComponent} from "react";
 
 
 interface ISearchProps {
-    handleSearch:(city:string|null) => {}
+    handleSearch:(city:string) => {}
 }
 
 class Search extends Component<ISearchProps>{

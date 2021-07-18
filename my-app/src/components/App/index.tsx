@@ -3,47 +3,45 @@ import ErrorIncorrectCity from "../ErrorIncorrectCity";
 import {PureComponent} from "react";
 import Container from "../Container";
 import "./style.css";
+import Api, {WeatherWeekData} from "../../Api";
 
 interface IAppProps {
-    Api: object|any;
+    api: Api;
 }
 
 interface IAppState {
-    allWeatherData:object;
-    error:boolean|null;
+    allWeatherData: WeatherWeekData|null;
+    error:boolean;
     nameOfCity: string|null;
 }
 
 class App extends PureComponent<IAppProps, IAppState>{
 
     state:IAppState = {
-        allWeatherData:{},
+        allWeatherData: null,
         error:false,
         nameOfCity: null
     }
 
-    // shouldComponentUpdate() {
-    //     if(this.state.error){
-    //         setTimeout(()=>{this.setState({error:false})}, 3000);
-    //     }
-    // }
-
     public render(): React.ReactNode {
+
         return (
             <div className="just_div">
                 <ErrorIncorrectCity isOpen={this.state.error} />
-                <Container nameOfCity={this.state.nameOfCity} searchingWeather={this.searchingWeather} weather={this.state.allWeatherData}/>
+                <Container nameOfCity={this.state.nameOfCity}
+                           searchingWeather={this.searchingWeather}
+                           weather={this.state.allWeatherData}/>
             </div>
         )
     }
 
-    searchingWeather = async (city: string|null) => {
-        const weather = await this.props.Api.getWeatherFromAPI(city);
+    searchingWeather = async (city: string) => {
+        const weather = await this.props.api.getWeatherFromAPI(city);
         if (weather) {
             this.setState(
                 {
                     nameOfCity: weather.nameOfCityForHTML,
-                    allWeatherData: weather,
+                    allWeatherData: weather.objectWithWeatherData,
                 }
             )
         } else if (!weather) {
