@@ -6,4 +6,4 @@ Tested only on Google Chrome.
 
 First experience of using React and TypeScript.
 
-![weather_demo](https://github.com/oOFaYOo/weather_react_typescript/blob/master/my-app/public/demo.gif)
+![weather_demo](https://github.com/oOFaYOo/weather_react_typescript/blob/master/public/demo.gif)

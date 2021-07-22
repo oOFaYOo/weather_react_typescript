@@ -3,6 +3,7 @@ import "./style.css";
 import {PureComponent} from "react";
 import WeatherForDay from "../../../../templateWeatherForDay";
 
+
 interface IDayProps {
     weather: WeatherForDay;
     isFirst: boolean;
@@ -49,6 +50,7 @@ class Day extends PureComponent<IDayProps, IDayState>{
         )
     }
 
+
     switchesInfo = ():void => {
         this.setState({
             isMainInfoOpen: !this.state.isMainInfoOpen,
@@ -56,7 +58,6 @@ class Day extends PureComponent<IDayProps, IDayState>{
             isDateOpen: !this.state.isDateOpen
         })
     }
-
 }
 
 export default Day;

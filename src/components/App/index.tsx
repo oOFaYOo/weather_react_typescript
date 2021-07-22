@@ -35,7 +35,7 @@ class App extends PureComponent<IAppProps, IAppState>{
         )
     }
 
-    searchingWeather = async (city: string) => {
+    private searchingWeather = async (city: string) => {
         const weather = await this.props.api.getWeatherFromAPI(city);
         if (weather) {
             this.setState(
